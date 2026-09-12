@@ -1,0 +1,23 @@
+{
+  "name": "scsboutique",
+  "version": "1.0.0",
+  "description": "Une vitrine e-commerce moderne pour découvrir, partager et commander des objets de seconde main à prix doux.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fossouoalbert/scsboutique.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fossouoalbert/scsboutique/issues"
+  },
+  "homepage": "https://github.com/fossouoalbert/scsboutique#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
