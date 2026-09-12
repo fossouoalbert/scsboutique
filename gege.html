@@ -1,0 +1,73 @@
+
+<!-- ==================== MODALE PRODUIT ==================== -->
+<div id="productModal" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+    <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+
+    <div class="modal-grid">
+      <div class="modal-media">
+        <img id="modalImage" src="" alt="">
+        <span id="modalBadge" class="modal-badge"></span>
+      </div>
+
+      <div class="modal-body">
+        <p id="modalCategory" class="modal-category"></p>
+        <h3 id="modalProductName"></h3>
+        <p id="modalPrice" class="modal-price"></p>
+        <p id="modalDescription" class="modal-desc"></p>
+
+        <div class="modal-qty-row">
+          <label for="modalQty" data-i18n="quantity">Quantité</label>
+          <div class="qty-stepper">
+            <button type="button" id="qtyMinus" aria-label="Diminuer">−</button>
+            <input type="number" id="modalQty" value="1" min="1">
+            <button type="button" id="qtyPlus" aria-label="Augmenter">+</button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="addToCartBtn" class="btn btn-outline" type="button" data-i18n="addToCart">Ajouter au panier</button>
+          <a id="whatsappDirectBtn" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener" data-i18n="orderWhatsapp">Commander sur WhatsApp</a>
+        </div>
+
+        <details class="alt-order">
+          <summary data-i18n="altOrderSummary">Commande avec livraison — formulaire rapide</summary>
+          <form id="orderForm" class="order-form">
+            <label>
+              <span data-i18n="fullName">Nom complet</span>
+              <input type="text" id="orderName" required>
+            </label>
+            <label>
+              <span data-i18n="address">Adresse de livraison</span>
+              <input type="text" id="orderAddress" required>
+            </label>
+            <label>
+              <span data-i18n="remarks">Remarques (optionnel)</span>
+              <textarea id="orderRemarks" rows="2"></textarea>
+            </label>
+            <button type="submit" class="btn btn-whatsapp btn-block" data-i18n="sendOrderWhatsapp">Envoyer la commande par WhatsApp</button>
+          </form>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PANIER (multi-articles) ==================== -->
+<div id="cartModal" class="modal-overlay" hidden>
+  <div class="modal modal-cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <button class="modal-close" id="cartClose" aria-label="Fermer">&times;</button>
+    <h3 id="cartTitle" data-i18n="cartTitle">Votre panier</h3>
+
+    <div id="cartItems" class="cart-items"></div>
+    <p id="cartEmpty" class="empty-state" data-i18n="cartEmpty">Votre panier est vide pour l'instant.</p>
+
+    <div id="cartFooter" class="cart-footer" hidden>
+      <div class="cart-total-row">
+        <span data-i18n="total">Total</span>
+        <strong id="cartTotal">0 €</strong>
+      </div>
+      <a id="cartWhatsappBtn" class="btn btn-whatsapp btn-block" href="#" target="_blank" rel="noopener" data-i18n="sendCartWhatsapp">Envoyer la liste par WhatsApp</a>
+    </div>
+  </div>
+</div>
