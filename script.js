@@ -18,16 +18,7 @@ Divers
 * 1) CONFIGURATION — à 
 personnaliser avant mise en ligne
 * ------------------------------------------------------------------ */
-const SITE_VERSION = "20260912-2";
 
-try {
-const previousVersion = localStorage.getItem("sc-sarl-site-version");
-localStorage.setItem("sc-sarl-site-version", SITE_VERSION);
-if (previousVersion && previousVersion !== SITE_VERSION) {
-window.location.reload();
-}
-} catch (error) {
-}
 
 const CONFIG = {
 whatsappNumber: 
@@ -244,15 +235,16 @@ description: { fr: "Fer à repasser électrique avec semelle antiadhésive et fo
 stock: "unique"
 },
 {
-id: 4, categorie: 
-"vetements",
-nom: { fr: "Veste en jean délavée", en: "Faded denim jacket" },
-prix: 15,
-image: 
-"https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=600&q=60&auto=format",
-description: { fr: "Veste en jean unisexe, taille M, coupe classique, légèrement délavée.", 
-en: "Unisex denim jacket, size M, classic cut, lightly faded." },
-stock: "stock"
+  id: 4,
+  categorie: "cuisine",
+  nom: { fr: "Carafe de soirée", en: "Serving carafe" },
+  prix: 0,
+  image: "IMG-20260924-WA0003.jpg",
+  description: {
+    fr: "Carafe destinée au service des boissons lors des repas et des réceptions.",
+    en: "Carafe for serving drinks during meals and receptions."
+  },
+  stock: "stock"
 },
 
 {
@@ -574,15 +566,300 @@ image:
 description: { fr: "matelas 3 places confortable",
     en: "mattress." },
 stock: "stock"
-}
+},
 
+{
+  id: 37,
+  categorie: "cuisine",
+  nom: { fr: "Service de casseroles", en: "Cookware set" },
+  prix: null,
+  image: "Screenshot_20260906_223629_Gallery.jpg",
+  description: {
+    fr: "Service de casseroles avec couvercles, idéal pour la préparation des repas.",
+    en: "Cookware set with lids, ideal for preparing meals."
+  },
+  stock: "stock"
+},
+{
+  id: 38,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "c32251ace11687cf44973855acc9dd84.jpg",
+  description: {
+    fr: "Article dont le nom et les caractéristiques restent à confirmer.",
+    en: "Item whose name and features are yet to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 39,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "dc60e637b74e3c906815f184381ce1bf.jpg",
+  description: {
+    fr: "Article à identifier à partir de sa photographie.",
+    en: "Item to be identified from its photograph."
+  },
+  stock: "stock"
+},
+{
+  id: 40,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260929-WA0008.jpg",
+  description: {
+    fr: "Identification et caractéristiques du produit à confirmer.",
+    en: "Product identification and specifications to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 41,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260726-WA0025.jpg",
+  description: {
+    fr: "Article à identifier avant sa mise en vente.",
+    en: "Item to be identified before being listed for sale."
+  },
+  stock: "stock"
+},
+{
+  id: 42,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260911-WA0047.jpg",
+  description: {
+    fr: "Nom, catégorie et caractéristiques à confirmer.",
+    en: "Name, category and features to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 43,
+  categorie: "meubles",
+  nom: { fr: "Matelas 3 places confortable", en: "Comfortable three-person mattress" },
+  prix: null,
+  image: "87eee2fc65b69026bf15c25fcf52756a.jpg",
+  description: {
+    fr: "Matelas trois places conçu pour le couchage et le confort quotidien.",
+    en: "Three-person mattress designed for everyday sleeping comfort."
+  },
+  stock: "stock"
+},
+{
+  id: 44,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "91bfee23345c9a9e11c3409a5683b10a.jpg",
+  description: {
+    fr: "Article dont la désignation doit être confirmée.",
+    en: "Item whose designation needs confirmation."
+  },
+  stock: "stock"
+},
+{
+  id: 45,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "7ef24fd59cba6296a4c738274e688a57.jpg",
+  description: {
+    fr: "Identification et description à compléter.",
+    en: "Identification and description to be completed."
+  },
+  stock: "stock"
+},
+{
+  id: 46,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "824af0bf165883e9535b24a4a765371f.jpg",
+  description: {
+    fr: "Produit en attente d'identification.",
+    en: "Product awaiting identification."
+  },
+  stock: "stock"
+},
+{
+  id: 47,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "e09285fa50f50455b47dbcabae6884ae.jpg",
+  description: {
+    fr: "Article dont les caractéristiques restent à préciser.",
+    en: "Item whose specifications remain to be determined."
+  },
+  stock: "stock"
+},
+{
+  id: 48,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "27e006e8537c48a468b09a56a73b7cd1.jpg",
+  description: {
+    fr: "Produit à identifier à partir de son image.",
+    en: "Product to be identified from its image."
+  },
+  stock: "stock"
+},
+{
+  id: 49,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "8ef8fa2e45a13ca4fd91f23293549a12.jpg",
+  description: {
+    fr: "Nom et description du produit à confirmer.",
+    en: "Product name and description to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 50,
+  categorie: "cuisine",
+  nom: { fr: "Cuisinière", en: "Cooker" },
+  prix: null,
+  image: "4d1f14feaca578834f2da1e519ae66d8.jpg",
+  description: {
+    fr: "Cuisinière destinée à la préparation des repas. Modèle et caractéristiques à confirmer.",
+    en: "Cooker for preparing meals. Model and specifications to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 51,
+  categorie: "electronique",
+  nom: { fr: "Fer à repasser", en: "Clothes iron" },
+  prix: null,
+  image: "3402c132dd7c1eba8cf75217e046d5b2.jpg",
+  description: {
+    fr: "Fer à repasser électrique pour l'entretien des vêtements.",
+    en: "Electric clothes iron for garment care."
+  },
+  stock: "stock"
+},
+{
+  id: 52,
+  categorie: "cuisine",
+  nom: { fr: "Lot de plateaux inox", en: "Set of stainless-steel trays" },
+  prix: null,
+  image: "Screenshot_20260906_223625_Gallery.jpg",
+  description: {
+    fr: "Ensemble de plateaux de service en acier inoxydable.",
+    en: "Set of stainless-steel serving trays."
+  },
+  stock: "stock"
+},
+{
+  id: 53,
+  categorie: "cuisine",
+  nom: { fr: "Lot de verres dorés", en: "Set of golden glasses" },
+  prix: null,
+  image: "Screenshot_20260906_223633_Gallery.jpg",
+  description: {
+    fr: "Ensemble de verres transparents avec finition dorée pour le service des boissons.",
+    en: "Set of clear glasses with a golden finish for serving drinks."
+  },
+  stock: "stock"
+},
+{
+  id: 54,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260726-WA0023.jpg",
+  description: {
+    fr: "Article dont l'identification reste à confirmer.",
+    en: "Item whose identification remains to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 55,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "27e006e8537c48a468b09a56a73b7cd1.jpg",
+  description: {
+    fr: "Produit à identifier. Même fichier image que le produit n° 48.",
+    en: "Product pending identification. Same image file as product No. 48."
+  },
+  stock: "stock"
+},
+{
+  id: 56,
+  categorie: "cuisine",
+  nom: { fr: "Lot de 6 cuillères dorées", en: "Set of 6 golden spoons" },
+  prix: null,
+  image: "Screenshot_20260906_223449_Gallery.jpg",
+  description: {
+    fr: "Ensemble de six cuillères dorées au design classique pour le service à table.",
+    en: "Set of six classic golden spoons for table service."
+  },
+  stock: "stock"
+},
+{
+  id: 57,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260924-WA0008.jpg",
+  description: {
+    fr: "Identification et caractéristiques à confirmer.",
+    en: "Identification and features to be confirmed."
+  },
+  stock: "stock"
+},
+{
+  id: 58,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260924-WA0017.jpg",
+  description: {
+    fr: "Nom et description du produit à compléter.",
+    en: "Product name and description to be completed."
+  },
+  stock: "stock"
+},
+{
+  id: 59,
+  categorie: "divers",
+  nom: { fr: "Produit à identifier", en: "Product pending identification" },
+  prix: null,
+  image: "IMG-20260924-WA0004.jpg",
+  description: {
+    fr: "Article à identifier à partir de sa photographie.",
+    en: "Item to be identified from its photograph."
+  },
+  stock: "stock"
+},
+{
+  id: 60,
+  categorie: "cuisine",
+  nom: { fr: "Carafe de soirée", en: "Serving carafe" },
+  prix: 0,
+  image: "IMG-20260924-WA0003.jpg",
+  description: {
+    fr: "Carafe destinée au service des boissons lors des repas et des réceptions.",
+    en: "Carafe for serving drinks during meals and receptions."
+  },
+  stock: "stock"
+}
 
 ];
 
 const PROMOTIONS = [
-{ title: { fr: "-15% sur la déco", en: "-15% on decor" }, text: { fr: "Sur une sélection de miroirs et lampes", en: "On a selection of mirrors and lamps" }, code: "DECO15" },
-{ title: { fr: "Livraison offerte", en: "Free delivery" }, text: { fr: "Dès 50 000 FCFA d'achat", en: "From 50,000 FCFA spent" }, code: "LIVRAISON" },
-{ title: { fr: "Offre seconde pièce", en: "Second item offer" }, text: { fr: "-10% sur le deuxième article", en: "-10% on the second item" }, code: "DUO10" }
 ];
 const DEFAULT_REVIEWS = [
 { name: "Amina", rating: 5, message: { fr: "Objet conforme aux photos et livraison rapide. Je recommande !", en: "Item as described and fast delivery. I recommend it!" } },
