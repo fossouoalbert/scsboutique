@@ -235,15 +235,15 @@ description: { fr: "Fer à repasser électrique avec semelle antiadhésive et fo
 stock: "unique"
 },
 {
-  id: 4,
-  categorie: "cuisine",
-  nom: { fr: "Carafe de soirée", en: "Serving carafe" },
-  prix: 0,
-  image: "IMG-20260924-WA0003.jpg",
-  description: {
-    fr: "Carafe destinée au service des boissons lors des repas et des réceptions.",
-    en: "Carafe for serving drinks during meals and receptions."
-  },
+id: 4, categorie: 
+"cuisine",
+nom: { fr: "porte plat", en: "Oven rack" },
+prix: 1500,
+image: "Screenshot_20260906_223306_Gallery.jpg",
+description: { fr: "porte plat pour classer les plats à la maison.", 
+en: "Black metal rack for an oven or cooking appliance." },
+stock: "stock"
+},
   stock: "stock"
 },
 
@@ -652,54 +652,7 @@ stock: "stock"
   },
   stock: "stock"
 },
-{
-  id: 44,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "91bfee23345c9a9e11c3409a5683b10a.jpg",
-  description: {
-    fr: "Article dont la désignation doit être confirmée.",
-    en: "Item whose designation needs confirmation."
-  },
-  stock: "stock"
-},
-{
-  id: 45,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "7ef24fd59cba6296a4c738274e688a57.jpg",
-  description: {
-    fr: "Identification et description à compléter.",
-    en: "Identification and description to be completed."
-  },
-  stock: "stock"
-},
-{
-  id: 46,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "824af0bf165883e9535b24a4a765371f.jpg",
-  description: {
-    fr: "Produit en attente d'identification.",
-    en: "Product awaiting identification."
-  },
-  stock: "stock"
-},
-{
-  id: 47,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "e09285fa50f50455b47dbcabae6884ae.jpg",
-  description: {
-    fr: "Article dont les caractéristiques restent à préciser.",
-    en: "Item whose specifications remain to be determined."
-  },
-  stock: "stock"
-},
+
 {
   id: 48,
   categorie: "divers",
@@ -712,18 +665,7 @@ stock: "stock"
   },
   stock: "stock"
 },
-{
-  id: 49,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "8ef8fa2e45a13ca4fd91f23293549a12.jpg",
-  description: {
-    fr: "Nom et description du produit à confirmer.",
-    en: "Product name and description to be confirmed."
-  },
-  stock: "stock"
-},
+
 {
   id: 50,
   categorie: "cuisine",
@@ -760,18 +702,7 @@ stock: "stock"
   },
   stock: "stock"
 },
-{
-  id: 53,
-  categorie: "cuisine",
-  nom: { fr: "Lot de verres dorés", en: "Set of golden glasses" },
-  prix: null,
-  image: "Screenshot_20260906_223633_Gallery.jpg",
-  description: {
-    fr: "Ensemble de verres transparents avec finition dorée pour le service des boissons.",
-    en: "Set of clear glasses with a golden finish for serving drinks."
-  },
-  stock: "stock"
-},
+
 {
   id: 54,
   categorie: "divers",
@@ -796,67 +727,6 @@ stock: "stock"
   },
   stock: "stock"
 },
-{
-  id: 56,
-  categorie: "cuisine",
-  nom: { fr: "Lot de 6 cuillères dorées", en: "Set of 6 golden spoons" },
-  prix: null,
-  image: "Screenshot_20260906_223449_Gallery.jpg",
-  description: {
-    fr: "Ensemble de six cuillères dorées au design classique pour le service à table.",
-    en: "Set of six classic golden spoons for table service."
-  },
-  stock: "stock"
-},
-{
-  id: 57,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "IMG-20260924-WA0008.jpg",
-  description: {
-    fr: "Identification et caractéristiques à confirmer.",
-    en: "Identification and features to be confirmed."
-  },
-  stock: "stock"
-},
-{
-  id: 58,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "IMG-20260924-WA0017.jpg",
-  description: {
-    fr: "Nom et description du produit à compléter.",
-    en: "Product name and description to be completed."
-  },
-  stock: "stock"
-},
-{
-  id: 59,
-  categorie: "divers",
-  nom: { fr: "Produit à identifier", en: "Product pending identification" },
-  prix: null,
-  image: "IMG-20260924-WA0004.jpg",
-  description: {
-    fr: "Article à identifier à partir de sa photographie.",
-    en: "Item to be identified from its photograph."
-  },
-  stock: "stock"
-},
-{
-  id: 60,
-  categorie: "cuisine",
-  nom: { fr: "Carafe de soirée", en: "Serving carafe" },
-  prix: 0,
-  image: "IMG-20260924-WA0003.jpg",
-  description: {
-    fr: "Carafe destinée au service des boissons lors des repas et des réceptions.",
-    en: "Carafe for serving drinks during meals and receptions."
-  },
-  stock: "stock"
-}
-
 ];
 
 const PROMOTIONS = [
