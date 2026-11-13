@@ -244,8 +244,6 @@ description: { fr: "porte plat pour classer les plats à la maison.",
 en: "Black metal rack for an oven or cooking appliance." },
 stock: "stock"
 },
-  stock: "stock"
-},
 
 {
 id: 5, categorie: "divers",
@@ -572,14 +570,13 @@ stock: "stock"
   id: 37,
   categorie: "cuisine",
   nom: { fr: "Service de casseroles", en: "Cookware set" },
-  prix: null,
+  prix: 12000,
   image: "Screenshot_20260906_223629_Gallery.jpg",
   description: {
     fr: "Service de casseroles avec couvercles, idéal pour la préparation des repas.",
     en: "Cookware set with lids, ideal for preparing meals."
   },
-  stock: "stock"
-},
+
 {
   id: 38,
   categorie: "divers",
@@ -590,8 +587,7 @@ stock: "stock"
     fr: "Article dont le nom et les caractéristiques restent à confirmer.",
     en: "Item whose name and features are yet to be confirmed."
   },
-  stock: "stock"
-},
+
 {
   id: 39,
   categorie: "divers",
@@ -602,8 +598,7 @@ stock: "stock"
     fr: "Article à identifier à partir de sa photographie.",
     en: "Item to be identified from its photograph."
   },
-  stock: "stock"
-},
+
 {
   id: 40,
   categorie: "divers",
@@ -614,8 +609,7 @@ stock: "stock"
     fr: "Identification et caractéristiques du produit à confirmer.",
     en: "Product identification and specifications to be confirmed."
   },
-  stock: "stock"
-},
+
 {
   id: 41,
   categorie: "divers",
@@ -654,7 +648,7 @@ stock: "stock"
 },
 
 {
-  id: 48,
+  id: 44,
   categorie: "divers",
   nom: { fr: "Produit à identifier", en: "Product pending identification" },
   prix: null,
@@ -663,11 +657,10 @@ stock: "stock"
     fr: "Produit à identifier à partir de son image.",
     en: "Product to be identified from its image."
   },
-  stock: "stock"
-},
+
 
 {
-  id: 50,
+  id: 45,
   categorie: "cuisine",
   nom: { fr: "Cuisinière", en: "Cooker" },
   prix: null,
@@ -679,7 +672,7 @@ stock: "stock"
   stock: "stock"
 },
 {
-  id: 51,
+  id: 46,
   categorie: "electronique",
   nom: { fr: "Fer à repasser", en: "Clothes iron" },
   prix: null,
@@ -688,10 +681,9 @@ stock: "stock"
     fr: "Fer à repasser électrique pour l'entretien des vêtements.",
     en: "Electric clothes iron for garment care."
   },
-  stock: "stock"
-},
+
 {
-  id: 52,
+  id: 47,
   categorie: "cuisine",
   nom: { fr: "Lot de plateaux inox", en: "Set of stainless-steel trays" },
   prix: null,
@@ -700,11 +692,10 @@ stock: "stock"
     fr: "Ensemble de plateaux de service en acier inoxydable.",
     en: "Set of stainless-steel serving trays."
   },
-  stock: "stock"
-},
+
 
 {
-  id: 54,
+  id: 48,
   categorie: "divers",
   nom: { fr: "Produit à identifier", en: "Product pending identification" },
   prix: null,
@@ -713,10 +704,9 @@ stock: "stock"
     fr: "Article dont l'identification reste à confirmer.",
     en: "Item whose identification remains to be confirmed."
   },
-  stock: "stock"
-},
+
 {
-  id: 55,
+  id: 49,
   categorie: "divers",
   nom: { fr: "Produit à identifier", en: "Product pending identification" },
   prix: null,
@@ -725,8 +715,7 @@ stock: "stock"
     fr: "Produit à identifier. Même fichier image que le produit n° 48.",
     en: "Product pending identification. Same image file as product No. 48."
   },
-  stock: "stock"
-},
+
 ];
 
 const PROMOTIONS = [
