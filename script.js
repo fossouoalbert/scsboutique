@@ -21,12 +21,10 @@ personnaliser avant mise en ligne
 
 
 const CONFIG = {
-whatsappNumber: 
-"676393943",          
+whatsappNumber: "237676393943",
 // ex: 
 
-whatsappGroupUrl: 
-" https://chat.whatsapp.com/FfNwUgwEAbFG0f1QZBRKxT",
+whatsappGroupUrl: "https://chat.whatsapp.com/FfNwUgwEAbFG0f1QZBRKxT",
 locationUrl: "https://www.google.com/maps/search/?api=1&query=SC%20SARL%2C%20Entree%20Carriere%2C%20Ndogpassi",
 currency: "FCFA"
 };
@@ -157,7 +155,7 @@ aboutP2: "Our commitment hasn't changed since day one: fair prices, an honest se
 joinGroup: "Join our WhatsApp group",
 followUs: "Follow us",
 footerTag: "Online thrift shop — sweet prices for 10 months.",
-footerBottom: "© 2026 The Treasure Attic. Made with care, one item at a time.",
+footerBottom: "© 2026 SC SARL. Made with care, one item at a time.",
 quantity: "Quantity",
 addToCart: "Add to cart",
 orderWhatsapp: "Order on WhatsApp",
@@ -175,9 +173,7 @@ badgeStock: "In stock",
 addedToCart: "Added to cart ✓"
 }
 };
-let currentLang = 
-localStorage.getItem("lang") || 
-"fr";
+let currentLang = localStorage.getItem("lang") === "en" ? "en" : "fr";
 function t(key) {
 return I18N[currentLang][key] 
 || key;
@@ -187,7 +183,7 @@ document.documentElement.lang =
 currentLang;
 document.querySelectorAll("[data-i18n]").forEach(el => {el.textContent = t(el.dataset.i18n);
 });
-document.querySelectorAll("[data-i18nplaceholder]").forEach(el => {el.placeholder = 
+document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {el.placeholder = 
 t(el.dataset.i18nPlaceholder);
 });
 document.getElementById("langToggle").textContent = currentLang.toUpperCase();
@@ -212,7 +208,7 @@ prix: 15000,
 image: 
 "3515322ae7a9794727ea83377d8500ef.jpg",
 description: { fr: "Chaise visiteur avec assise et dossier rembourrés, structure métallique noire.", en: "Visitor chair with padded seat and backrest, black metal frame." },
-stock: " stock"
+stock: "stock"
 },
 {
 id: 2, categorie: 
@@ -576,7 +572,8 @@ stock: "stock"
     fr: "Service de casseroles avec couvercles, idéal pour la préparation des repas.",
     en: "Cookware set with lids, ideal for preparing meals."
   },
-
+  stock: "stock"
+},
 {
   id: 38,
   categorie: "divers",
@@ -587,7 +584,8 @@ stock: "stock"
     fr: "Article dont le nom et les caractéristiques restent à confirmer.",
     en: "Item whose name and features are yet to be confirmed."
   },
-
+  stock: "stock"
+},
 {
   id: 39,
   categorie: "divers",
@@ -598,7 +596,8 @@ stock: "stock"
     fr: "Article à identifier à partir de sa photographie.",
     en: "Item to be identified from its photograph."
   },
-
+  stock: "stock"
+},
 {
   id: 40,
   categorie: "divers",
@@ -609,7 +608,8 @@ stock: "stock"
     fr: "Identification et caractéristiques du produit à confirmer.",
     en: "Product identification and specifications to be confirmed."
   },
-
+  stock: "stock"
+},
 {
   id: 41,
   categorie: "divers",
@@ -646,7 +646,6 @@ stock: "stock"
   },
   stock: "stock"
 },
-
 {
   id: 44,
   categorie: "divers",
@@ -657,8 +656,8 @@ stock: "stock"
     fr: "Produit à identifier à partir de son image.",
     en: "Product to be identified from its image."
   },
-
-
+  stock: "stock"
+},
 {
   id: 45,
   categorie: "cuisine",
@@ -681,7 +680,8 @@ stock: "stock"
     fr: "Fer à repasser électrique pour l'entretien des vêtements.",
     en: "Electric clothes iron for garment care."
   },
-
+  stock: "stock"
+},
 {
   id: 47,
   categorie: "cuisine",
@@ -692,8 +692,8 @@ stock: "stock"
     fr: "Ensemble de plateaux de service en acier inoxydable.",
     en: "Set of stainless-steel serving trays."
   },
-
-
+  stock: "stock"
+},
 {
   id: 48,
   categorie: "divers",
@@ -704,7 +704,8 @@ stock: "stock"
     fr: "Article dont l'identification reste à confirmer.",
     en: "Item whose identification remains to be confirmed."
   },
-
+  stock: "stock"
+},
 {
   id: 49,
   categorie: "divers",
@@ -715,7 +716,8 @@ stock: "stock"
     fr: "Produit à identifier. Même fichier image que le produit n° 48.",
     en: "Product pending identification. Same image file as product No. 48."
   },
-
+  stock: "stock"
+}
 ];
 
 const PROMOTIONS = [
@@ -884,8 +886,11 @@ matchesSearch;
 });
 }
 function formatPrice(value) {
-return `${value} 
-${CONFIG.currency}`;
+  if (value == null || value === "" || !Number.isFinite(Number(value))) {
+    return currentLang === "fr" ? "Prix à confirmer" : "Price to be confirmed";
+  }
+  const formatted = Number(value).toLocaleString(currentLang === "fr" ? "fr-FR" : "en-US");
+  return `${formatted} ${CONFIG.currency}`;
 }
 async function shareWithApi(shareData) {
 if (!navigator.share) return false;
@@ -994,8 +999,7 @@ loading="lazy">
 </span>
 </div>
 <div class="product-info">
-<span class="product-cat">${t("cat" + 
-capitalize(p.categorie))}</span>
+<span class="product-cat">${t("cat" + capitalize(normalizeCategory(p.categorie)))}</span>
 <span class="product-name">${p.nom[currentLang]}
 </span>
 <span class="product-description"></span>
@@ -1076,6 +1080,17 @@ t("badgeStock");
 badge.style.background = 
 currentProduct.stock === "unique" 
 ? "var(--stock-unique)" : "var(--stock-ok)";
+const hasKnownPrice = currentProduct.prix != null && Number.isFinite(Number(currentProduct.prix));
+const directButton = document.getElementById("whatsappDirectBtn");
+const addButton = document.getElementById("addToCartBtn");
+const orderSubmit = document.querySelector("#orderForm button[type='submit']");
+directButton.setAttribute("aria-disabled", String(!hasKnownPrice));
+directButton.tabIndex = hasKnownPrice ? 0 : -1;
+directButton.style.pointerEvents = hasKnownPrice ? "" : "none";
+addButton.disabled = !hasKnownPrice;
+if (orderSubmit) orderSubmit.disabled = !hasKnownPrice;
+const quantityInput = document.getElementById("modalQty");
+quantityInput.max = currentProduct.stock === "unique" ? "1" : "";
 updateWhatsappDirectLink();
 document.getElementById("productModal").hidden = false;
 document.body.style.overflow = 
@@ -1116,10 +1131,15 @@ document.getElementById("modalQty").addEventListener("input",
 updateWhatsappDirectLink);
 function 
 updateWhatsappDirectLink() {
-if (!currentProduct) return;
-const qty = Math.max(1, 
-parseInt(document.getElementById(
-"modalQty").value || "1"));
+const directButton = document.getElementById("whatsappDirectBtn");
+if (!currentProduct || currentProduct.prix == null) {
+  directButton.href = "#";
+  directButton.setAttribute("aria-disabled", "true");
+  return;
+}
+let qty = Math.max(1, parseInt(document.getElementById("modalQty").value || "1", 10) || 1);
+if (currentProduct.stock === "unique") qty = 1;
+document.getElementById("modalQty").value = qty;
 const total = 
 currentProduct.prix * qty;
 const message =
@@ -1136,9 +1156,7 @@ ${currentProduct.nom.en} x${qty}
 — ${formatPrice(total)}\n\nCould 
 you confirm availability?`);
 document.getElementById("whatsappDirectBtn").href =
-`https://wa.me/${CONFIG.whatsappNumber}?
-text=${encodeURIComponent(message
-)}`;
+`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 /* ---- Formulaire de commande 
 alternative (avec livraison) ---- 
@@ -1146,12 +1164,10 @@ alternative (avec livraison) ----
 document.getElementById("orderForm").addEventListener("submit", 
 (e) => {
 e.preventDefault();
-if (!currentProduct) return;
-const qty = Math.max(1, 
-parseInt(document.getElementById(
-"modalQty").value || "1"));
-const total = 
-currentProduct.prix * qty;
+if (!currentProduct || currentProduct.prix == null) return;
+let qty = Math.max(1, parseInt(document.getElementById("modalQty").value || "1", 10) || 1);
+if (currentProduct.stock === "unique") qty = 1;
+const total = currentProduct.prix * qty;
 const name = 
 document.getElementById("orderName").value.trim();
 const address = 
@@ -1160,25 +1176,21 @@ const remarks =
 document.getElementById("orderRemarks").value.trim();
 const message = currentLang === 
 "fr"
-? `Nouvelle commande — Le 
-Grenier à Trésors\n\nArticle : 
+? `Nouvelle commande — SC SARL\n\nArticle : 
 ${currentProduct.nom.fr}\nQuantit
 é : ${qty}\nTotal : 
 ${formatPrice(total)}\n\nNom : 
 ${name}\nAdresse : 
 ${address}\nRemarques : ${remarks 
 || "—"}`
-: `New order — The Treasure 
-Attic\n\nItem: 
+: `New order — SC SARL\n\nItem: 
 ${currentProduct.nom.en}\nQuantit
 y: ${qty}\nTotal: 
 ${formatPrice(total)}\n\nName: 
 ${name}\nAddress: 
 ${address}\nNotes: ${remarks || 
 "—"}`;
-window.open(`https://wa.me/${CONFIG.whatsappNumber}?
-text=${encodeURIComponent(message
-)}`, "_blank");
+window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
 e.target.reset();
 });
 /* ------------------------------------------------------------------ *
@@ -1189,14 +1201,12 @@ d'objets { id, qty }).
 let cart = [];
 document.getElementById("addToCartBtn").addEventListener("click", 
 () => {
-if (!currentProduct) return;
-const qty = Math.max(1, 
-parseInt(document.getElementById(
-"modalQty").value || "1"));
-const existing = cart.find(item => item.id === 
-currentProduct.id);
+if (!currentProduct || currentProduct.prix == null) return;
+let qty = Math.max(1, parseInt(document.getElementById("modalQty").value || "1", 10) || 1);
+if (currentProduct.stock === "unique") qty = 1;
+const existing = cart.find(item => item.id === currentProduct.id);
 if (existing) {
-existing.qty += qty;
+existing.qty = currentProduct.stock === "unique" ? 1 : existing.qty + qty;
 } else {
 cart.push({ id: 
 currentProduct.id, qty });
@@ -1259,20 +1269,11 @@ row.innerHTML = `
 <img src="${product.image}" 
 alt="${product.nom[currentLang]}"
 >
-<div class="cart-item
-info">
-<div class="cart-item
-name">${product.nom[currentLang]}
+<div class="cart-item-info">
+<div class="cart-item-name">${product.nom[currentLang]}</div>
+<div class="cart-item-meta">x${item.qty} — ${formatPrice(lineTotal)}</div>
 </div>
-<div class="cart-item
-meta">x${item.qty} — 
-${formatPrice(lineTotal)}</div>
-</div>
-<button class="cart-item
-remove" data
-id="${item.id}">${currentLang === 
-"fr" ? "Retirer" : "Remove"}
-</button>
+<button type="button" class="cart-item-remove" data-id="${item.id}">${currentLang === "fr" ? "Retirer" : "Remove"}</button>
 `;
 container.appendChild(row);
 });
@@ -1316,9 +1317,7 @@ list:\n\n${lines}\n\nTotal:
 ${formatPrice(total)}\n\nCould 
 you confirm availability?`;
 document.getElementById("cartWhatsappBtn").href =
-`https://wa.me/${CONFIG.whatsappNumber}?
-text=${encodeURIComponent(message
-)}`;
+`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 document.getElementById("cartToggle").addEventListener("click", () => {
 document.getElementById("cartModal").hidden = false;
